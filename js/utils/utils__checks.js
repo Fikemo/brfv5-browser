@@ -14,7 +14,7 @@ export const isVideo = (video, errorMsg) => {
 
 export const isImage = (image, errorMsg) => {
 
-  if(!image || !image.naturalWidth) {
+  if(!image || !video.naturalWidth) {
 
     error(errorMsg)
 
