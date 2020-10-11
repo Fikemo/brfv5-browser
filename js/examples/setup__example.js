@@ -144,7 +144,7 @@ export const setupExample = (config = null) => {
 
   mountPreloader(stage)
   mountStats(stage)
-  mountLogo(stage)
+  //mountLogo(stage)
   mountFullscreen(stage)
 
   loadBRFv5Model(_modelName, _numChunksToLoad, './js/brfv5/models/', null, onProgress)
