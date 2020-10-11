@@ -29,18 +29,16 @@ import { updateByFace }                     from '../ui/ui__overlay__texture.js'
 
 import { faceTextures }                     from '../../assets/textures/brfv5_texture_overlay_extended.js'
 
-import { drawFaceDetectionResults }         from '../utils/utils__draw_tracking_results.js'
-
 const faceExtended = new BRFv5FaceExtended()
 
 const _textures = [
   {
     // The texture image data, either Base64 string or url.
-    tex:        faceTextures.marcel.tex, // or faceTextures.marcel.tex
+    tex:        faceTextures.grumpy.tex, // or faceTextures.marcel.tex
 
     // Array of Numbers between 0.0 and 1.0, [x, y, x, y, ..., x, y],
     // with 74 * 2 length.
-    uv:         faceTextures.marcel.uv, // or faceTextures.marcel.uv
+    uv:         faceTextures.grumpy.uv, // or faceTextures.marcel.uv
 
     // Choose the correct triangles for your texture, with or without
     // whole for the mouth. 68l for normal face shape, 74l for extended
@@ -91,17 +89,13 @@ export const handleTrackingResults = (brfv5Manager, brfv5Config, canvas) => {
 
       updateByFace(ctx, faceExtended, i, true)
 
-      // drawCircles(ctx, face.landmarks, '#ff0000', 3.0)
-
     } else {
 
       updateByFace(ctx, null, i, false)
-
-      drawFaceDetectionResults(brfv5Manager, brfv5Config, canvas)
     }
   }
 
-  return false
+  return true
 }
 
 const exampleConfig = {
